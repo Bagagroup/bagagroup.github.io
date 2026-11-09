@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smart Parking — AI that sees every parking space</title>
-<meta name="description" content="Smart Parking: real-time computer vision (YOLOv8) on existing city CCTV cameras — live parking availability, instant booking, zero new hardware. By Baqdaulet Yernazaruly, Almaty, Kazakhstan.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%85%BF%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<title>Baqdaulet Yernazaruly — AI Systems Engineer &amp; Founder</title>
+<meta name="description" content="Baqdaulet Yernazaruly — AI Systems Engineer &amp; Founder. CS Senior Lecturer (Narxoz · SDU), Founder &amp; CEO of Smart Parking, leads the Narxoz AI Startup Incubator. 23 projects shipped, 4 apps in production 24/7. Almaty, Kazakhstan.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9A%80%3C/text%3E%3C/svg%3E">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -30,8 +30,8 @@
     background:rgba(5,7,15,.72);border-bottom:1px solid rgba(255,255,255,.07);
   }
   .nav-inner{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .logo{font-weight:800;letter-spacing:-.01em;font-size:17px;text-decoration:none;color:#EDEFF7;display:flex;align-items:center;gap:9px}
-  .logo .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#7C5CFF,#00D4FF);display:inline-flex;align-items:center;justify-content:center;font-size:12px}
+  .logo{font-weight:800;letter-spacing:-.01em;font-size:17px;text-decoration:none;color:#EDEFF7;display:flex;align-items:center;gap:9px;white-space:nowrap}
+  .logo .dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#7C5CFF,#00D4FF);display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#05070F;flex:0 0 auto}
   .nav-links{display:flex;gap:22px;flex-wrap:wrap}
   .nav-links a{color:#9AA1BC;text-decoration:none;font-size:14px;font-weight:600;transition:color .2s}
   .nav-links a:hover{color:#00D4FF}
@@ -50,13 +50,14 @@
   .grid{display:grid;gap:20px}
   .g2{grid-template-columns:1fr 1fr}
   .g3{grid-template-columns:1fr 1fr 1fr}
+  .g4{grid-template-columns:repeat(4,1fr)}
   .card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:26px 28px;
     display:flex;flex-direction:column;gap:10px;transition:transform .25s ease,border-color .25s ease,background .25s ease}
   .card:hover{transform:translateY(-3px);border-color:rgba(0,212,255,.35);background:rgba(255,255,255,.06)}
   .card h3{font-size:20px;font-weight:700}
   .card p{font-size:15px;color:#9AA1BC;line-height:1.6}
   .stack{font-size:13px;color:#6B7190;font-family:ui-monospace,Menlo,monospace}
-  .num{font-size:clamp(34px,4vw,46px);font-weight:800;background:linear-gradient(90deg,#7C5CFF,#00D4FF);
+  .num{font-size:clamp(30px,3.6vw,42px);font-weight:800;background:linear-gradient(90deg,#7C5CFF,#00D4FF);
     -webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.05}
   .lbl{font-size:13.5px;color:#9AA1BC;letter-spacing:.03em}
   .btn{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;text-decoration:none;
@@ -73,9 +74,9 @@
 
   /* ---------- hero ---------- */
   .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:100px 0 70px;position:relative}
-  .hero h1{font-size:clamp(40px,7.5vw,76px);line-height:1.04;font-weight:800;letter-spacing:-.02em;margin:14px 0}
+  .hero h1{font-size:clamp(38px,6.8vw,70px);line-height:1.06;font-weight:800;letter-spacing:-.02em;margin:14px 0}
   .hero h1 .grad{background:linear-gradient(90deg,#7C5CFF,#00D4FF);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero .sub{font-size:clamp(16px,2.2vw,19px);max-width:680px}
+  .hero .sub{font-size:clamp(16px,2.2vw,19px);max-width:720px}
   .hero-badges{margin:26px 0 34px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-status{margin-top:44px;display:flex;align-items:center;gap:12px;font-size:14px;color:#9AA1BC;flex-wrap:wrap}
@@ -84,27 +85,47 @@
   .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#6B7190;font-size:20px;animation:bob 2s ease-in-out infinite}
   @keyframes bob{50%{transform:translate(-50%,8px)}}
 
-  /* ---------- how it works ---------- */
-  .steps{counter-reset:step}
-  .step{position:relative;padding-left:64px;margin-bottom:8px}
-  .step::before{
-    counter-increment:step;content:"0" counter(step);
-    position:absolute;left:0;top:2px;width:44px;height:44px;border-radius:12px;
-    display:flex;align-items:center;justify-content:center;
-    font-weight:800;font-size:15px;color:#05070F;
+  /* ---------- profile ---------- */
+  .avatar{width:96px;height:96px;border-radius:26px;flex:0 0 auto;
     background:linear-gradient(135deg,#7C5CFF,#00D4FF);
-  }
+    display:flex;align-items:center;justify-content:center;
+    font-size:38px;font-weight:800;color:#05070F;letter-spacing:-.02em}
+  .profile-row{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;margin-bottom:38px}
+  .profile-row h3{font-size:24px}
+  .stat-mini{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:24px 22px;
+    display:flex;flex-direction:column;gap:6px;justify-content:center;transition:transform .25s ease,border-color .25s ease}
+  .stat-mini:hover{transform:translateY(-3px);border-color:rgba(0,212,255,.35)}
 
-  /* ---------- founder ---------- */
-  .founder-card{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start}
-  .avatar{width:120px;height:120px;border-radius:28px;flex:0 0 auto;
-    background:linear-gradient(135deg,#7C5CFF,#00D4FF);
-    display:flex;align-items:center;justify-content:center;
-    font-size:44px;font-weight:800;color:#05070F;letter-spacing:-.02em}
+  /* ---------- chips ---------- */
   .chips{display:flex;flex-wrap:wrap;gap:9px}
   .chip{font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;
     border:1px solid rgba(124,92,255,.35);background:rgba(124,92,255,.10);color:#C9BDFF}
   .chip.c{border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.08);color:#7FE7FF}
+
+  /* ---------- projects ---------- */
+  .status{display:inline-flex;align-items:center;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+    padding:5px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#9AA1BC;align-self:flex-start}
+  .status.flag{color:#05070F;border:none;background:linear-gradient(90deg,#7C5CFF,#00D4FF)}
+  .status.live{color:#3DDC97;border-color:rgba(61,220,151,.4);background:rgba(61,220,151,.08)}
+  .status.dev{color:#FFC66D;border-color:rgba(255,198,109,.4);background:rgba(255,198,109,.08)}
+  .status.mvp{color:#C9BDFF;border-color:rgba(124,92,255,.4);background:rgba(124,92,255,.1)}
+  .status.proto{color:#00D4FF;border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.08)}
+  .proj-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .proj-title{font-size:20px;font-weight:700;display:flex;align-items:center;gap:10px}
+  .flagship{border:1px solid transparent;background:
+    linear-gradient(rgba(255,255,255,.05),rgba(255,255,255,.05)) padding-box,
+    linear-gradient(90deg,rgba(124,92,255,.6),rgba(0,212,255,.6)) border-box}
+  .flagship:hover{border:1px solid transparent;background:
+    linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,.08)) padding-box,
+    linear-gradient(90deg,rgba(124,92,255,.8),rgba(0,212,255,.8)) border-box}
+  .mini-chips .chip{font-size:12px;padding:5px 11px}
+
+  /* ---------- experience ---------- */
+  .timeline{display:flex;flex-direction:column;gap:16px}
+  .titem{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start}
+  .twhen{font-size:13.5px;font-weight:800;letter-spacing:.05em;color:#00D4FF;padding-top:3px}
+  .twhat{font-size:15.5px;color:#9AA1BC;line-height:1.6}
+  .twhat b{color:#EDEFF7}
 
   /* ---------- footer ---------- */
   footer{border-top:1px solid rgba(255,255,255,.08);padding:56px 0 40px;background:rgba(5,7,15,.6)}
@@ -124,13 +145,20 @@
   }
 
   /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .g4{grid-template-columns:1fr 1fr}
+  }
   @media (max-width:860px){
     .g3{grid-template-columns:1fr}
     .g2{grid-template-columns:1fr}
-    .founder-card{grid-template-columns:1fr}
+    .profile-row{grid-template-columns:1fr}
+    .titem{grid-template-columns:1fr;gap:4px}
     .nav-links{display:none}
     section{padding:64px 0}
     .foot-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .g4{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -139,62 +167,208 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#top"><span class="dot">P</span>Smart&nbsp;Parking</a>
+    <a class="logo" href="#top"><span class="dot">BY</span>Baqdaulet&nbsp;Yernazaruly</a>
     <div class="nav-links">
-      <a href="#solution">Solution</a>
-      <a href="#tech">How it works</a>
-      <a href="#market">Market</a>
-      <a href="#founder">Founder</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#flagship">Flagship</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<!-- 1 · HERO -->
+<!-- 1 · HERO — FOUNDER PROFILE -->
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="kicker reveal">SMART PARKING · ALMATY → CENTRAL ASIA</div>
-    <h1 class="reveal">AI that sees<br>every <span class="grad">parking space.</span></h1>
-    <p class="sub reveal" style="transition-delay:.1s">Real-time computer vision on existing city CCTV cameras — live parking availability, instant booking, zero new hardware.</p>
-    <div class="hero-badges reveal" style="transition-delay:.15s">
-      <span class="badge ai">🤖 Computer Vision · YOLOv8</span>
-      <span class="badge">📍 Almaty, Kazakhstan</span>
-      <span class="badge hot">🔥 Pre-seed</span>
+    <div class="kicker reveal">AI SYSTEMS ENGINEER &amp; FOUNDER · ALMATY, KAZAKHSTAN (UTC+5)</div>
+    <div class="profile-row reveal">
+      <div class="avatar">BY</div>
+      <div>
+        <h1>Baqdaulet <span class="grad">Yernazaruly</span></h1>
+        <p class="sub">Computer Science Senior Lecturer (<b style="color:#EDEFF7">Narxoz University</b> · also <b style="color:#EDEFF7">SDU University</b>), <b style="color:#EDEFF7">Founder &amp; CEO of Smart Parking</b>, leads the <b style="color:#EDEFF7">Narxoz AI Startup Incubator</b>.</p>
+      </div>
     </div>
-    <div class="hero-cta reveal" style="transition-delay:.2s">
-      <a class="btn btn-primary" href="#solution">Explore the product →</a>
-      <a class="btn btn-ghost" href="#founder">Meet the founder</a>
+    <div class="hero-badges reveal" style="transition-delay:.08s">
+      <span class="badge ai">🤖 CV · YOLOv8</span>
+      <span class="badge">🧠 LLM · RAG</span>
+      <span class="badge">🎓 Senior Lecturer</span>
+      <span class="badge hot">🚀 4 yrs building with student teams</span>
     </div>
-    <div class="hero-status reveal" style="transition-delay:.25s">
-      <span class="pulse"></span> Working MVP built · Pilots planned at Narxoz &amp; SDU campuses
+    <div class="hero-cta reveal" style="transition-delay:.12s">
+      <a class="btn btn-primary" href="#projects">Explore my projects →</a>
+      <a class="btn btn-ghost" href="#flagship">🅿️ Flagship: Smart Parking</a>
+    </div>
+    <div class="grid g4" style="margin-top:44px">
+      <div class="stat-mini reveal" style="transition-delay:.1s"><span class="num">23</span><span class="lbl">projects shipped</span></div>
+      <div class="stat-mini reveal" style="transition-delay:.16s"><span class="num">4</span><span class="lbl">apps in production 24/7</span></div>
+      <div class="stat-mini reveal" style="transition-delay:.22s"><span class="num">21</span><span class="lbl">-project startup catalog authored</span></div>
+      <div class="stat-mini reveal" style="transition-delay:.28s"><span class="num">MSc</span><span class="lbl">IITU</span></div>
     </div>
   </div>
   <div class="scroll-hint" aria-hidden="true">↓</div>
 </header>
 
-<!-- 2 · PROBLEM / SOLUTION -->
-<section id="solution">
+<!-- 2 · SKILLS -->
+<section id="skills" style="padding-top:64px">
   <div class="wrap">
-    <div class="kicker reveal">THE PROBLEM → THE SOLUTION</div>
-    <h2 class="reveal">Parking is broken. We turn existing cameras into the fix.</h2>
+    <div class="kicker reveal">TOOLBOX</div>
+    <h2 class="reveal">Skills &amp; stack</h2>
+    <div class="rule reveal"></div>
+    <div class="chips reveal">
+      <span class="chip">Python</span>
+      <span class="chip c">YOLOv8 / CV</span>
+      <span class="chip">LLM / RAG</span>
+      <span class="chip c">Next.js / React</span>
+      <span class="chip">FastAPI</span>
+      <span class="chip c">PostgreSQL</span>
+      <span class="chip">Edge computing (Jetson)</span>
+      <span class="chip c">Flutter</span>
+      <span class="chip">Teaching &amp; team leadership</span>
+      <span class="chip c">Systems engineering</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PORTFOLIO — PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="kicker reveal">PORTFOLIO</div>
+    <h2 class="reveal">Projects — from concept to production</h2>
     <div class="rule reveal"></div>
 
-    <div class="grid g2 reveal" style="margin-bottom:34px">
-      <div class="card">
-        <h3>😠 Drivers circle blind</h3>
-        <p>Drivers waste <b style="color:#EDEFF7">20–30 minutes</b> searching for spots. In Almaty alone — <b style="color:#EDEFF7">600K+ vehicles</b> — there's no way to know where a free space actually is.</p>
+    <!-- Flagship full-width -->
+    <a class="card flagship reveal" href="#flagship" style="text-decoration:none;margin-bottom:20px;gap:12px">
+      <div class="proj-head">
+        <div class="proj-title">🅿️ Smart Parking</div>
+        <span class="status flag">★ Flagship · prototype → pilots</span>
       </div>
-      <div class="card">
-        <h3>🏢 Operators run blind</h3>
-        <p><b style="color:#EDEFF7">40–60% off-peak vacancy</b>, no occupancy analytics, no dynamic pricing, no digital channel. Revenue sits empty in plain sight.</p>
+      <p>Real-time parking availability from existing CCTV via YOLOv8 computer vision; booking app + operator analytics.</p>
+      <div class="chips mini-chips">
+        <span class="chip">Next.js</span><span class="chip">Python</span><span class="chip">YOLOv8</span><span class="chip">Jetson</span>
       </div>
-    </div>
+    </a>
 
     <div class="grid g3">
       <div class="card reveal">
+        <div class="proj-head">
+          <div class="proj-title">🍽 Daladelish (RRS)</div>
+          <span class="status live">● Live in production</span>
+        </div>
+        <p>Restaurant digital ecosystem: 4 apps (customer menu/orders, waiter, admin, control panel) running 24/7 for a real operating business.</p>
+        <div class="chips mini-chips">
+          <span class="chip">Next.js 15</span><span class="chip">React 19</span><span class="chip">PostgreSQL</span><span class="chip">Nginx/PM2</span><span class="chip">Cloudflare</span>
+        </div>
+      </div>
+      <div class="card reveal" style="transition-delay:.06s">
+        <div class="proj-head">
+          <div class="proj-title">🎓 Academic Compass</div>
+          <span class="status dev">In development</span>
+        </div>
+        <p>AI learning platform with RAG agents: instructor uploads a knowledge base, students get a "virtual teacher".</p>
+        <div class="chips mini-chips">
+          <span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">vector DB</span><span class="chip">LLM</span>
+        </div>
+      </div>
+      <div class="card reveal" style="transition-delay:.12s">
+        <div class="proj-head">
+          <div class="proj-title">🏗 BuildHouse</div>
+          <span class="status dev">In development</span>
+        </div>
+        <p>Home renovation &amp; construction marketplace connecting homeowners with vetted contractors.</p>
+        <div class="chips mini-chips">
+          <span class="chip">Next.js</span><span class="chip">Spring Boot</span><span class="chip">NestJS</span>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="proj-head">
+          <div class="proj-title">🎮 SaveQuest</div>
+          <span class="status mvp">MVP spec</span>
+        </div>
+        <p>Gamified iOS finance tracker: spending forecast + arcade (XP, streaks, boss fights).</p>
+        <div class="chips mini-chips">
+          <span class="chip">Swift/SwiftUI</span>
+        </div>
+      </div>
+      <div class="card reveal" style="transition-delay:.06s">
+        <div class="proj-head">
+          <div class="proj-title">🧳 TourHive</div>
+          <span class="status proto">Prototype</span>
+        </div>
+        <p>Social platform for group tours (organizer / participant roles).</p>
+        <div class="chips mini-chips">
+          <span class="chip">Flutter</span><span class="chip">Firebase</span>
+        </div>
+      </div>
+      <div class="card reveal" style="transition-delay:.12s">
+        <div class="proj-head">
+          <div class="proj-title">💳 FinAI</div>
+          <span class="status">Concept (validated)</span>
+        </div>
+        <p>AI assistant in FinTech for freelancers &amp; gig workers. Business plan + product demo done.</p>
+        <div class="chips mini-chips">
+          <span class="chip">LLM</span><span class="chip">Business plan</span><span class="chip">Product demo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · EXPERIENCE / ABOUT -->
+<section id="experience">
+  <div class="wrap">
+    <div class="kicker reveal">EXPERIENCE / ABOUT</div>
+    <h2 class="reveal">Lecturer by title, builder by nature</h2>
+    <div class="rule reveal"></div>
+    <div class="card reveal timeline" style="gap:22px">
+      <div class="titem">
+        <div class="twhen">2022 →</div>
+        <div class="twhat"><b>Senior Lecturer, Narxoz University</b> — also lecturing at <b>SDU University</b> since 2019.</div>
+      </div>
+      <div class="titem">
+        <div class="twhen">LEAD</div>
+        <div class="twhat">Leads the <b>Narxoz AI Startup Incubator</b> — turns student teams into production builders: <b>23 projects shipped, 4 apps live</b>.</div>
+      </div>
+      <div class="titem">
+        <div class="twhen">AUTHOR</div>
+        <div class="twhat">Author of a <b>21-project startup catalog</b> used in his Technological Entrepreneurship course.</div>
+      </div>
+      <div class="titem">
+        <div class="twhen">2022</div>
+        <div class="twhat">Research internship, <b>Akdeniz University</b>.</div>
+      </div>
+      <div class="titem">
+        <div class="twhen">MSc</div>
+        <div class="twhat"><b>IITU</b>, Almaty.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · FLAGSHIP SPOTLIGHT — SMART PARKING -->
+<section id="flagship" style="background:rgba(124,92,255,.045);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)">
+  <div class="wrap">
+    <div class="kicker reveal">FLAGSHIP SPOTLIGHT</div>
+    <h2 class="reveal">🅿️ Smart Parking — AI that sees every parking space</h2>
+    <div class="rule reveal"></div>
+    <p class="sub reveal" style="margin-bottom:28px">Real-time computer vision on existing city CCTV cameras — live parking availability, instant booking, zero new hardware. <b style="color:#EDEFF7">Status: prototype → pilots.</b></p>
+
+    <div class="grid g3 reveal" style="margin-bottom:20px">
+      <div class="card" style="justify-content:center;gap:8px">
+        <div><span class="num">20–30</span> <span class="lbl">minutes drivers waste searching for spots</span></div>
+      </div>
+      <div class="card" style="justify-content:center;gap:8px">
+        <div><span class="num">600K+</span> <span class="lbl">vehicles in Almaty — no way to see free spaces</span></div>
+      </div>
+      <div class="card" style="justify-content:center;gap:8px">
+        <div><span class="num">40–60%</span> <span class="lbl">off-peak vacancy — revenue sitting in plain sight</span></div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-bottom:20px">
+      <div class="card reveal">
         <h3>👁 SEE</h3>
-        <p>CV engine detects cars and free spaces from <b style="color:#EDEFF7">existing CCTV</b> — no sensors, no construction.</p>
-        <p><b style="color:#EDEFF7">&gt;90%</b> target accuracy · privacy by design — video never leaves the site.</p>
+        <p>YOLOv8 CV engine detects cars and free spaces from <b style="color:#EDEFF7">existing CCTV</b> — no sensors, no construction. Privacy by design.</p>
         <p class="stack">Python · YOLOv8 · edge computing</p>
       </div>
       <div class="card reveal" style="transition-delay:.08s">
@@ -208,58 +382,8 @@
         <p class="stack">Dashboard · Analytics</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- 3 · HOW IT WORKS -->
-<section id="tech">
-  <div class="wrap">
-    <div class="kicker reveal">HOW IT WORKS</div>
-    <h2 class="reveal">From camera feed to booked spot — in seconds</h2>
-    <div class="rule reveal"></div>
-    <div class="grid g2">
-      <div class="card reveal steps">
-        <div class="step">
-          <h3>Connect existing cameras</h3>
-          <p>Any city or operator CCTV overlooking a lot. Zero new hardware, zero construction.</p>
-        </div>
-        <div class="step">
-          <h3>Detect on the edge</h3>
-          <p>YOLOv8 inference at the site — every car, every free/occupied space, in real time. Video never leaves the premises.</p>
-        </div>
-        <div class="step">
-          <h3>Publish live availability</h3>
-          <p>Aggregated into one city-wide availability layer, served to drivers and operators.</p>
-        </div>
-        <div class="step">
-          <h3>Book &amp; optimize</h3>
-          <p>Drivers book guaranteed spots; operators price and plan with real occupancy data.</p>
-        </div>
-      </div>
-      <div class="card reveal" style="transition-delay:.1s;gap:16px;justify-content:center">
-        <div><span class="num">&gt;90%</span> <span class="lbl">target detection accuracy</span></div>
-        <div><span class="num">0</span> <span class="lbl">new sensors required — existing CCTV only</span></div>
-        <div><span class="num">MVP</span> <span class="lbl">CV pipeline · booking platform · operator dashboard · PWA — already working</span></div>
-        <div style="margin-top:6px">
-          <span class="chip">Python</span>
-          <span class="chip">YOLOv8</span>
-          <span class="chip c">Edge computing</span>
-          <span class="chip">Next.js</span>
-          <span class="chip c">PWA</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4 · MARKET & BUSINESS MODEL -->
-<section id="market">
-  <div class="wrap">
-    <div class="kicker reveal">MARKET &amp; BUSINESS MODEL</div>
-    <h2 class="reveal">A $53B market, software margins</h2>
-    <div class="rule reveal"></div>
-
-    <div class="grid g3 reveal" style="margin-bottom:20px">
+    <div class="grid g3 reveal">
       <div class="card" style="justify-content:center;gap:8px">
         <div><span class="num">$10.2B</span></div>
         <div class="lbl">global smart parking market, 2025</div>
@@ -273,69 +397,6 @@
         <div class="lbl">CAGR</div>
       </div>
     </div>
-
-    <div class="grid g2">
-      <div class="card reveal">
-        <h3>📍 Beachhead: Almaty</h3>
-        <ul class="list" style="gap:10px;margin-top:6px">
-          <li><span><b>5,000+</b> mall parking spaces</span></li>
-          <li><span><b>3,000+</b> business-center spaces</span></li>
-          <li><span><b>10,000+</b> residential complex spaces</span></li>
-          <li><span>Then: <b>Astana, Shymkent</b> → Central Asia</span></li>
-        </ul>
-      </div>
-      <div class="card reveal" style="transition-delay:.1s">
-        <h3>💰 Revenue model</h3>
-        <div><span class="num">$8–20</span> <span class="lbl">per space / month — B2B SaaS</span></div>
-        <div><span class="num">10%</span> <span class="lbl">commission on bookings through the driver app</span></div>
-        <p>Analytics + live availability for operators, guaranteed spots for drivers.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 · FOUNDER -->
-<section id="founder">
-  <div class="wrap">
-    <div class="kicker reveal">FOUNDER</div>
-    <h2 class="reveal">Built by a shipper, not a talker</h2>
-    <div class="rule reveal"></div>
-
-    <div class="card reveal founder-card" style="margin-bottom:20px">
-      <div class="avatar">BY</div>
-      <div>
-        <h3 style="font-size:24px">Baqdaulet Yernazaruly</h3>
-        <p style="margin-top:4px"><b style="color:#00D4FF">Founder &amp; CEO, Smart Parking</b> · AI Systems Engineer</p>
-        <p style="margin-top:10px">Computer Science Senior Lecturer at <b style="color:#EDEFF7">Narxoz University</b> (also lecturing at <b style="color:#EDEFF7">SDU University</b>), Almaty, Kazakhstan. MSc, International Information Technology University (IITU). Leads the <b style="color:#EDEFF7">Narxoz AI Startup Incubator</b> — 4 years turning student engineering teams into production builders.</p>
-      </div>
-    </div>
-
-    <div class="grid g3" style="margin-bottom:20px">
-      <div class="card reveal" style="justify-content:center;gap:8px">
-        <div><span class="num">23</span></div>
-        <div class="lbl">projects shipped with student teams</div>
-      </div>
-      <div class="card reveal" style="transition-delay:.08s;justify-content:center;gap:8px">
-        <div><span class="num">4</span></div>
-        <div class="lbl">apps running in production 24/7 — incl. the Daladelish restaurant ecosystem</div>
-      </div>
-      <div class="card reveal" style="transition-delay:.16s;justify-content:center;gap:8px">
-        <div><span class="num">Flagship</span></div>
-        <div class="lbl">Smart Parking — the incubator's flagship venture</div>
-      </div>
-    </div>
-
-    <div class="card reveal">
-      <h3>🛠 Toolbox</h3>
-      <div class="chips">
-        <span class="chip">Computer Vision · YOLOv8</span>
-        <span class="chip c">LLM / RAG</span>
-        <span class="chip">Python</span>
-        <span class="chip c">Systems engineering</span>
-        <span class="chip">Next.js</span>
-        <span class="chip c">Teaching &amp; mentoring</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -344,11 +405,12 @@
   <div class="wrap">
     <div class="card reveal" style="text-align:center;padding:56px 28px;gap:16px;align-items:center">
       <div class="kicker" style="margin:0">GET IN TOUCH</div>
-      <h2>Every space visible.<br>Let's build it together.</h2>
-      <p class="sub" style="margin:0 auto">Investors, parking operators, campus partners — we're pre-seed with a working MVP and pilots planned. Almaty · UTC+5.</p>
+      <h2>Let's build something that ships.</h2>
+      <p class="sub" style="margin:0 auto">Investors, operators, universities, engineers — always open to collaborations. Almaty, Kazakhstan · UTC+5.</p>
       <div class="hero-cta" style="justify-content:center;margin-top:10px">
         <a class="btn btn-primary" href="mailto:thebagagroup@gmail.com">✉️ thebagagroup@gmail.com</a>
         <a class="btn btn-ghost" href="https://github.com/Bagagroup" target="_blank" rel="noopener">⭐ github.com/Bagagroup</a>
+        <a class="btn btn-ghost" href="#">in/ LinkedIn</a>
       </div>
     </div>
   </div>
@@ -357,16 +419,17 @@
 <footer>
   <div class="wrap">
     <div class="foot-grid">
-      <a class="logo" href="#top"><span class="dot">P</span>Smart&nbsp;Parking</a>
+      <a class="logo" href="#top"><span class="dot">BY</span>Baqdaulet&nbsp;Yernazaruly</a>
       <div class="foot-links">
         <a href="mailto:thebagagroup@gmail.com">thebagagroup@gmail.com</a>
         <a href="https://github.com/Bagagroup" target="_blank" rel="noopener">GitHub</a>
         <a href="#">LinkedIn</a>
+        <a href="https://bagagroup.github.io" target="_blank" rel="noopener">bagagroup.github.io</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Smart Parking · Baqdaulet Yernazaruly · Almaty, Kazakhstan (UTC+5)</span>
-      <span>AI that sees every parking space.</span>
+      <span>© 2026 Baqdaulet Yernazaruly · Almaty, Kazakhstan (UTC+5)</span>
+      <span>Founder profile · Projects portfolio · <a href="#flagship" style="color:#6B7190">Smart Parking</a></span>
     </div>
   </div>
 </footer>
